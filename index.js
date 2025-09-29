@@ -11,10 +11,12 @@ ConnectToDatabase()//connected data base by calling function
 
 app.use(express.json())//add middleware  to the database
 
-app.use("/api",BookRoute)
+app.use("/books",BookRoute)
+
+app.use("/products",ProductRoute)
 
 app.use(cors())
-app.use("/products",ProductRoute)
+
 
 var port=process.env.PORT || 9999
 app.listen(port,()=>{
